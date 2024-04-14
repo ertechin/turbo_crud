@@ -1,22 +1,22 @@
-<%= form_with(model: quote) do |form| %>
-  <% if quote.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+<div class="py-2 border border-black p-4">
+  <%= form_with(model: quote) do |form| %>
+    <% if quote.errors.any? %>
+      <div class="border border-rose-900 p-2">
+        <ul>
+          <% quote.errors.each do |error| %>
+            <li class="text-rose-900"><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% quote.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div>
+      <%= form.label :text, style: "display: block", class: "underline" %>
+      <%= form.text_field :text, class: "border  border-black"%>
+    </div>
+
+    <div class="pt-2">
+      <%= form.submit class: "border border-black p-2" %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :text, style: "display: block" %>
-    <%= form.text_field :text %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

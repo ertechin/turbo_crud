@@ -1,10 +1,12 @@
-<h1>Editing quote</h1>
+<div class="border border-black p-4">
+  <div class="underline">Editing quote</div>
 
-<%= render "form", quote: @quote %>
+  <div class="py-2">
+    <%= render "form", quote: @quote %>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this quote", @quote %> |
-  <%= link_to "Back to quotes", quotes_path %>
+  <div class="pt-2 flex space-x-2">
+    <%= link_to "Show this quote", @quote, class: "border border-black p-2" %>
+    <%= link_to "Back to quotes", quotes_path, class: "border border-black p-2" %>
+  </div>
 </div>
