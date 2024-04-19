@@ -1,23 +1,31 @@
 <div class="border border-black p-4">
   <p style="color: green"><%= notice %></p>
 
-  <div class="underline pb-2">Quotes</div>
- 
-  <div id="quotes" class="border border-black py-2">
+  <div class='flex justify-between pb-2'>
+    <div class="underline">Quotes</div>
+    <div>
+      <%= link_to "New Quote", new_quote_path, class:"border border-black p-2" %>
+    </div>
+  </div>
 
+  <!-- Divider -->
+  <div class="border-t border-black mt-2 mb-2"></div>
+  <!-- Divider -->
+
+  <div id="quotes">
     <% @quotes.each_with_index do |quote, i| %>
- 
-      <div class="flex justify-between py-4 px-2">
+      <div class="flex py-4 px-2 mb-4 border border-black justify-between">
         <%= render quote%>
-        <div class="px-2">
-          <%= link_to "Show", quote, class:"border border-black" %>
+        <div class='flex'>
+          <div class="px-2">
+            <%= link_to "Show", quote, class:"border border-black" %>
+          </div>
+          <div class="px-2">
+            <%= link_to "Show", quote, class:"border border-black" %>
+          </div>
         </div>
-      </div>
-    
+      </div>    
     <% end %>
-
   </div>
-  <div class="pt-4">
-    <%= link_to "New Quote", new_quote_path, class:"border border-black p-2" %>
-  </div>
+  
 </div>
