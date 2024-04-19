@@ -13,7 +13,7 @@
   <!-- Divider -->
 
   <div id="quotes">
-    <% @quotes.each_with_index do |quote, i| %>
+    <% @quotes.created_desc.each_with_index do |quote, i| %>
       <div class="flex py-4 px-2 mb-4 border border-black justify-between">
         <%= render quote%>
         <div class='flex'>

@@ -18,7 +18,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to quote_url(@quote), notice: "Quote was successfully created." }
+        format.html { redirect_to quotes_path(@quote), notice: "Quote was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -28,7 +28,7 @@ class QuotesController < ApplicationController
   def update
     respond_to do |format|
       if @quote.update(quote_params)
-        format.html { redirect_to quote_url(@quote), notice: "Quote was successfully updated." }
+        format.html { redirect_to quotes_path(@quote), notice: "Quote was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
