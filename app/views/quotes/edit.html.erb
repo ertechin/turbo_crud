@@ -1,7 +1,7 @@
 <div class="border border-black p-4">
   <div class="underline">Editing quote</div>
 
-  <%= turbo_frame_tag "turbo_edit_#{@quote.id}" do%>
+  <%= turbo_frame_tag "quote_#{@quote.id}" do%>
     <div class="py-2">
         <%= render "form", quote: @quote %>
     </div>

@@ -4,7 +4,7 @@
   <div class='flex justify-between pb-2'>
     <div class="underline">Quotes</div>
     <div>
-      <%= link_to "New Quote", new_quote_path, class:"border border-black p-2", data: {turbo_frame: 'turbo_new'} %>
+      <%= link_to "New Quote", new_quote_path, class:"border border-black p-2", data: {turbo_frame: 'new_quote'} %>
     </div>
   </div>
 
@@ -12,20 +12,20 @@
   <div class="border-t border-black mt-2 mb-2"></div>
   <!-- Divider -->
   <div class='py-2'>
-    <%= turbo_frame_tag 'turbo_new' do%><% end %>
+    <%= turbo_frame_tag 'new_quote'%>
   </div>
 
   <div id="quotes">
-    <% @quotes.created_desc.each_with_index do |quote, i| %>
-      <%= turbo_frame_tag "turbo_edit_#{quote.id}" do%>
-        <div class="flex py-4 px-2 mb-4 border border-black justify-between">
+    <% @quotes.created_desc.each do |quote| %>
+      <%= turbo_frame_tag "quote_#{quote.id}" do%>
+        <div class="flex py-4 px-2 mb-4 border border-blue-500 justify-between">
           <%= render quote%>
           <div class='flex'>
             <div class="px-2">
-              <%= link_to "Edit", edit_quote_path(quote), class:"border border-black px-2", data: {turbo_frame: "turbo_edit_#{quote.id}"} %>          
+              <%= link_to "Edit", edit_quote_path(quote), class:"border border-black px-2", data: {turbo_frame: "quote_#{quote.id}"} %>
             </div>
             <div class="px-2">
-              <%= link_to "Destroy", quote, method: :delete, class:"border border-black px-2" %>
+              <%= button_to "Destroy", quote, method: :delete, class:"border border-black px-2" %>
             </div>
           </div>
         </div>    

@@ -5,7 +5,7 @@
 <div class="p-4">
   <div class="underline">New quote</div>
   <div class="py-2">
-    <%= turbo_frame_tag 'turbo_new' do%>
+    <%= turbo_frame_tag 'new_quote' do%>
       <%= render "form", quote: @quote %>
     <% end %>
   </div>  
