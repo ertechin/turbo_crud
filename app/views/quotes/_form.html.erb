@@ -9,14 +9,15 @@
         </ul>
       </div>
     <% end %>
-    <div class='flex justify-between'>
+    <div class='flex justify-between gap-x-2'>
       <div class='w-full'>
         <%= form.label :text, style: "display: block", class: "underline" %>
-        <%= form.text_field :text, class: "border border-black w-full h-8"%>
+        <%= form.text_field :text, class: "border border-black w-full h-8 #{error_css(quote, 'border-rose-700')}"%>
       </div>
 
-      <div class="pt-6 ml-2">
-        <%= form.submit class: "border border-black h-8 px-2" %>
+      <div class="pt-6 flex gap-x-2">
+        <%= link_to 'X', quotes_path, class: 'border border-rose-500 px-2 py-1 h-8'%>
+        <%= form.submit class: "border border-black px-2 h-8" %>
       </div>  
     </div>
   <% end %>

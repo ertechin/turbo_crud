@@ -1,6 +1,14 @@
-<div id="<%= dom_id quote %>">
-  <p>
-    <strong>.</strong>
-    <%= link_to quote.text, quote_path(quote), data: {turbo_frame: '_top'}%>
-  </p>
-</div>
+<%= turbo_frame_tag "quote_#{quote.id}" do%>
+  <div class="flex py-4 px-2 mb-4 border border-blue-500 justify-between">
+    <div id="<%= dom_id quote %>">
+      <p>
+        <strong>.</strong>
+        <%= link_to quote.text, quote_path(quote), data: {turbo_frame: '_top'}%>
+      </p>
+    </div>
+    <div class='flex gap-x-1'>
+        <%= link_to "Edit", edit_quote_path(quote), class:"border border-black px-2", dasta: {turbo_frame: "quote_#{quote.id}"} %>
+        <%= button_to "Destroy", quote, method: :delete, class:"border border-black px-2" %>
+    </div>
+  </div>    
+<% end %>
