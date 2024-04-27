@@ -1,0 +1,27 @@
+
+<%=turbo_frame_tag 'all_content_frame' do%>
+  <%= link_to 'all_content_frame link', frame_path, class: 'border border-black'%>
+
+  <%=turbo_frame_tag 'first_frame' do%>
+    <%= link_to 'all_content_frame error link', frame_path, class: 'border border-black'%>
+    <%= link_to 'all_content_frame link 2', frame_path, class: 'border border-black', data: {turbo_frame: 'all_content_frame'}%>
+
+    <%= link_to 'my_mom link', frame_path, class:'border border-black', data: {turbo_frame: 'my_mom'}%>
+    <%= link_to 'my_mom error link', frame_path, class: 'border border-black'%>
+    
+    <div>inside first_frame</div>
+  <% end %>
+
+  <%=turbo_frame_tag 'my_mom' do%>
+    <%= link_to 'my_mom link 2', frame_path, class: 'border border-black'%>
+
+    <div>this will be raplaced 'my_mom'</div>
+  <% end %>
+
+<% end %>
+
+<%=turbo_frame_tag 'outsider_frame' do%>
+  <%= link_to 'outsider_frame link', frame_path, class:'border border-black'%>
+<% end %>
+
+<%= link_to 'outsider_frame link 2', frame_path, class:'border border-black', data: {turbo_frame: 'outsider_frame'}%>

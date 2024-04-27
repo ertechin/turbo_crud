@@ -1,0 +1,20 @@
+<%= turbo_frame_tag 'random_x_frame' do%>
+  <div>hello mf</div>
+
+  <%= turbo_frame_tag '' do%>
+    <div>''</div>
+  <% end %>
+
+  <%= turbo_frame_tag 'my_mom' do%>
+    <div>my mom</div>
+  <% end %>
+
+<% end %>
+
+<%= turbo_frame_tag 'all_content_frame' do%>
+  <div>All Content Changed</div>
+<% end %>
+
+<%= turbo_frame_tag 'outsider_frame' do%>
+  <div>outsider_frame is Changed</div>
+<% end %>

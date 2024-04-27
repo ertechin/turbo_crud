@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :quotes
+
+  get "main_frame" => "play_with_frames#main_frame"
+  get "frame" => "play_with_frames#frame"
 end
