@@ -12,11 +12,11 @@ With Turbo Drive, Ruby on Rails applications are fast by default. When Turbo Dri
 #### Targeting Frames Rule:
 - Links can target frames other than the one they are directly nested in using the `data-turbo-frame` attribute.
 - Turbo Frame targeting is achieved by specifying the desired frame's id in the `data-turbo-frame` attribute. The frame with the same id on the source page will be replaced by the frame with the same id on the target page.
-  - Note: The special frame `_top` represents the whole page. Using `data-turbo-frame="_top"` replaces the entire page, changing its URL to the target page's URL.
 
 #### Error Handling Rule:
 - If the target page does not have a Turbo Frame with the same ID, the frame disappears and is replaced with a content-missing error
 
+Note: The special frame `_top` represents the whole page. Using `data-turbo-frame="_top"` replaces the entire page, changing its URL to the target page's URL.
 ## Turbo Stream:
 Turbo Stream is a format and like any format, it requires a corresponding view. It is used to dynamically update HTML content. This HTML content is generated on the server and then processed dynamically on the client side.
 
